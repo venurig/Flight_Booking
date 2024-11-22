@@ -15,7 +15,7 @@ public class DBConnection
     {
         try
         {
-            String url = "jdbc:mysql://localhost/flightBookingDB;";
+            String url = "jdbc:mysql://localhost/flightbookingdb";
             con = DriverManager.getConnection(url,"root","");
 
         }

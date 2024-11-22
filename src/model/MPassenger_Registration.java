@@ -7,12 +7,12 @@ import java.sql.*;
 
 public class MPassenger_Registration 
 {
-    public void registerPassenger(String fullName, String contactNumber, String email, String passportNumber, String password)
+    public void registerPassenger(String fullName, String contactNumber, String email, String gender, String passportNumber, String password)
     {
         try
         {
             Statement st = DBConnection.createDBConnection().createStatement();
-            st.executeUpdate("insert into registerDetails values('"+fullName+"' , '"+contactNumber+"' , '"+email+"' , '"+passportNumber+"' , '"+password+"')");
+            st.executeUpdate("insert into registerDetails values('"+fullName+"' , '"+contactNumber+"' , '"+email+"' , '"+gender+"' , '"+passportNumber+"' , '"+password+"')");
             System.out.println("Succesfully added");
         }
         catch(SQLException e)
