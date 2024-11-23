@@ -3,11 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
+import java.util.Date;
+import model.*;
 
-/**
- *
- * @author V E N U R I
- */
-public class CFlight_Details {
-    
+public class CFlight_Details 
+{
+    public void addFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String arrivalDate)
+   {
+       MFlight_Details mfdreg = new MFlight_Details();
+       mfdreg.addFlightDetails(flightNumber, fromDestination, toDestination, departureDate, arrivalDate);
+   }
 }

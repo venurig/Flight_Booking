@@ -110,67 +110,75 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jDateChooser2" min="-2" pref="333" max="-2" attributes="0"/>
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" min="-2" pref="333" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jComboBox2" alignment="0" min="-2" pref="333" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jDateChooser1" alignment="0" min="-2" pref="333" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                      <Component id="datecArrivalDate" min="-2" pref="333" max="-2" attributes="0"/>
+                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmbTo" min="-2" pref="333" max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtFlightNumber" alignment="0" max="32767" attributes="0"/>
+                          <Component id="cmbFrom" alignment="0" min="-2" pref="333" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="datecDepartureDate" alignment="0" min="-2" pref="333" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnUpdate" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="65" max="32767" attributes="0"/>
+                  <EmptySpace pref="170" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="txtSearchFlightNumber" min="-2" pref="136" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSearchFlightNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtFlightNumber" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmbFrom" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmbTo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                  <Component id="datecDepartureDate" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
+                  <Component id="datecArrivalDate" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAdd" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="48" max="32767" attributes="0"/>
+                  <EmptySpace pref="45" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -181,10 +189,10 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Fligh Number"/>
+            <Property name="text" type="java.lang.String" value="Flight Number"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="txtFlightNumber">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
@@ -200,43 +208,45 @@
             <Property name="text" type="java.lang.String" value="From"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="cmbTo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="27">
-                <StringItem index="0" value="Select Destination"/>
-                <StringItem index="1" value="Abu Dhabi International Airport (AUH)"/>
-                <StringItem index="2" value="Bandaranaike International Airport (CMB)"/>
-                <StringItem index="3" value="Charles de Gaulle Airport (CDG)"/>
-                <StringItem index="4" value="Chennai International Airport (MAA)"/>
-                <StringItem index="5" value="Chhatrapati Shivaji Maharaj International Airport (BOM)"/>
-                <StringItem index="6" value="Cochin International Airport (COK)"/>
-                <StringItem index="7" value="Dubai International Airport (DXB)"/>
-                <StringItem index="8" value="Frankfurt Airport (FRA)"/>
-                <StringItem index="9" value="Hamad International Airport (DOH)"/>
-                <StringItem index="10" value="Incheon International Airport (ICN)"/>
-                <StringItem index="11" value="Indira Gandhi International Airport (DEL)"/>
-                <StringItem index="12" value="Kempegowda International Airport (BLR)"/>
-                <StringItem index="13" value="King Khalid International Airport (RUH)"/>
-                <StringItem index="14" value="Kuala Lumpur International Airport (KUL)"/>
-                <StringItem index="15" value="Kuwait International Airport (KWI)"/>
-                <StringItem index="16" value="London Heathrow Airport (LHR)"/>
-                <StringItem index="17" value="Melbourne Airport (MEL)"/>
-                <StringItem index="18" value="Montreal-Trudeau International Airport (YUL)"/>
-                <StringItem index="19" value="Narita International Airport (NRT)"/>
-                <StringItem index="20" value="Singapore Changi Airport (SIN)"/>
-                <StringItem index="21" value="Soekarno&#x2013;Hatta International Airport (CGK)"/>
-                <StringItem index="22" value="Suvarnabhumi Airport (BKK)"/>
-                <StringItem index="23" value="Sydney Kingsford Smith Airport (SYD)"/>
-                <StringItem index="24" value="Toronto Pearson International Airport (YYZ)"/>
-                <StringItem index="25" value="Trivandrum International Airport (TRV)"/>
-                <StringItem index="26" value="Velana International Airport (MLE)"/>
+              <StringArray count="26">
+                <StringItem index="0" value="Abu Dhabi International Airport (AUH)"/>
+                <StringItem index="1" value="Bandaranaike International Airport (CMB)"/>
+                <StringItem index="2" value="Charles de Gaulle Airport (CDG)"/>
+                <StringItem index="3" value="Chennai International Airport (MAA)"/>
+                <StringItem index="4" value="Chhatrapati Shivaji Maharaj International Airport (BOM)"/>
+                <StringItem index="5" value="Cochin International Airport (COK)"/>
+                <StringItem index="6" value="Dubai International Airport (DXB)"/>
+                <StringItem index="7" value="Frankfurt Airport (FRA)"/>
+                <StringItem index="8" value="Hamad International Airport (DOH)"/>
+                <StringItem index="9" value="Incheon International Airport (ICN)"/>
+                <StringItem index="10" value="Indira Gandhi International Airport (DEL)"/>
+                <StringItem index="11" value="Kempegowda International Airport (BLR)"/>
+                <StringItem index="12" value="King Khalid International Airport (RUH)"/>
+                <StringItem index="13" value="Kuala Lumpur International Airport (KUL)"/>
+                <StringItem index="14" value="Kuwait International Airport (KWI)"/>
+                <StringItem index="15" value="London Heathrow Airport (LHR)"/>
+                <StringItem index="16" value="Melbourne Airport (MEL)"/>
+                <StringItem index="17" value="Montreal-Trudeau International Airport (YUL)"/>
+                <StringItem index="18" value="Narita International Airport (NRT)"/>
+                <StringItem index="19" value="Singapore Changi Airport (SIN)"/>
+                <StringItem index="20" value="Soekarno&#x2013;Hatta International Airport (CGK)"/>
+                <StringItem index="21" value="Suvarnabhumi Airport (BKK)"/>
+                <StringItem index="22" value="Sydney Kingsford Smith Airport (SYD)"/>
+                <StringItem index="23" value="Toronto Pearson International Airport (YYZ)"/>
+                <StringItem index="24" value="Trivandrum International Airport (TRV)"/>
+                <StringItem index="25" value="Velana International Airport (MLE)"/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbToActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -249,43 +259,45 @@
             <Property name="text" type="java.lang.String" value="To"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox2">
+        <Component class="javax.swing.JComboBox" name="cmbFrom">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="27">
-                <StringItem index="0" value="Select Destination"/>
-                <StringItem index="1" value="Abu Dhabi International Airport (AUH)"/>
-                <StringItem index="2" value="Bandaranaike International Airport (CMB)"/>
-                <StringItem index="3" value="Charles de Gaulle Airport (CDG)"/>
-                <StringItem index="4" value="Chennai International Airport (MAA)"/>
-                <StringItem index="5" value="Chhatrapati Shivaji Maharaj International Airport (BOM)"/>
-                <StringItem index="6" value="Cochin International Airport (COK)"/>
-                <StringItem index="7" value="Dubai International Airport (DXB)"/>
-                <StringItem index="8" value="Frankfurt Airport (FRA)"/>
-                <StringItem index="9" value="Hamad International Airport (DOH)"/>
-                <StringItem index="10" value="Incheon International Airport (ICN)"/>
-                <StringItem index="11" value="Indira Gandhi International Airport (DEL)"/>
-                <StringItem index="12" value="Kempegowda International Airport (BLR)"/>
-                <StringItem index="13" value="King Khalid International Airport (RUH)"/>
-                <StringItem index="14" value="Kuala Lumpur International Airport (KUL)"/>
-                <StringItem index="15" value="Kuwait International Airport (KWI)"/>
-                <StringItem index="16" value="London Heathrow Airport (LHR)"/>
-                <StringItem index="17" value="Melbourne Airport (MEL)"/>
-                <StringItem index="18" value="Montreal-Trudeau International Airport (YUL)"/>
-                <StringItem index="19" value="Narita International Airport (NRT)"/>
-                <StringItem index="20" value="Singapore Changi Airport (SIN)"/>
-                <StringItem index="21" value="Soekarno&#x2013;Hatta International Airport (CGK)"/>
-                <StringItem index="22" value="Suvarnabhumi Airport (BKK)"/>
-                <StringItem index="23" value="Sydney Kingsford Smith Airport (SYD)"/>
-                <StringItem index="24" value="Toronto Pearson International Airport (YYZ)"/>
-                <StringItem index="25" value="Trivandrum International Airport (TRV)"/>
-                <StringItem index="26" value="Velana International Airport (MLE)"/>
+              <StringArray count="26">
+                <StringItem index="0" value="Abu Dhabi International Airport (AUH)"/>
+                <StringItem index="1" value="Bandaranaike International Airport (CMB)"/>
+                <StringItem index="2" value="Charles de Gaulle Airport (CDG)"/>
+                <StringItem index="3" value="Chennai International Airport (MAA)"/>
+                <StringItem index="4" value="Chhatrapati Shivaji Maharaj International Airport (BOM)"/>
+                <StringItem index="5" value="Cochin International Airport (COK)"/>
+                <StringItem index="6" value="Dubai International Airport (DXB)"/>
+                <StringItem index="7" value="Frankfurt Airport (FRA)"/>
+                <StringItem index="8" value="Hamad International Airport (DOH)"/>
+                <StringItem index="9" value="Incheon International Airport (ICN)"/>
+                <StringItem index="10" value="Indira Gandhi International Airport (DEL)"/>
+                <StringItem index="11" value="Kempegowda International Airport (BLR)"/>
+                <StringItem index="12" value="King Khalid International Airport (RUH)"/>
+                <StringItem index="13" value="Kuala Lumpur International Airport (KUL)"/>
+                <StringItem index="14" value="Kuwait International Airport (KWI)"/>
+                <StringItem index="15" value="London Heathrow Airport (LHR)"/>
+                <StringItem index="16" value="Melbourne Airport (MEL)"/>
+                <StringItem index="17" value="Montreal-Trudeau International Airport (YUL)"/>
+                <StringItem index="18" value="Narita International Airport (NRT)"/>
+                <StringItem index="19" value="Singapore Changi Airport (SIN)"/>
+                <StringItem index="20" value="Soekarno&#x2013;Hatta International Airport (CGK)"/>
+                <StringItem index="21" value="Suvarnabhumi Airport (BKK)"/>
+                <StringItem index="22" value="Sydney Kingsford Smith Airport (SYD)"/>
+                <StringItem index="23" value="Toronto Pearson International Airport (YYZ)"/>
+                <StringItem index="24" value="Trivandrum International Airport (TRV)"/>
+                <StringItem index="25" value="Velana International Airport (MLE)"/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbFromActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -298,7 +310,7 @@
             <Property name="text" type="java.lang.String" value="Departure Date"/>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+        <Component class="com.toedter.calendar.JDateChooser" name="datecDepartureDate">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
@@ -308,9 +320,9 @@
             <Property name="text" type="java.lang.String" value="Arrival Date"/>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
+        <Component class="com.toedter.calendar.JDateChooser" name="datecArrivalDate">
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="btnDelete">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
@@ -318,21 +330,40 @@
             <Property name="text" type="java.lang.String" value="Delete"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="btnUpdate">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Update"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="btnAdd">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Add"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnSearch">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Search"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtSearchFlightNumber">
         </Component>
       </SubComponents>
     </Container>
