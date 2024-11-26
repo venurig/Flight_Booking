@@ -19,5 +19,20 @@ public class MFlight_Details
         {
             System.err.println(e.getMessage());
         }
-    }   
+    }
+    
+    public void updateFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String arrivalDate) 
+    {
+        try 
+        {
+            Statement st = DBConnection.createDBConnection().createStatement();
+            st.executeUpdate("UPDATE FlightDetails SET fromDestination = '"+fromDestination+"' , toDestination = '"+toDestination+"' , departureDate = '"+ departureDate+"' , arrivalDate = '"+arrivalDate+"' WHERE flightNumber = '"+flightNumber+"'");
+            System.out.println("Flight details successfully updated.");
+        } 
+        catch (SQLException e) {
+
+            System.err.println("SQL Error: " + e.getMessage());
+        }
+    }
+
 }   

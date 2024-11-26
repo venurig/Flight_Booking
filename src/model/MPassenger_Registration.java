@@ -12,7 +12,8 @@ public class MPassenger_Registration
         try
         {
             Statement st = DBConnection.createDBConnection().createStatement();
-            st.executeUpdate("insert into registerDetails values('"+fullName+"' , '"+contactNumber+"' , '"+email+"' , '"+gender+"' , '"+passportNumber+"' , '"+password+"')");
+            String query = "INSERT INTO registerDetails (fullName, contactNumber, email, gender, passportNumber, password) VALUES ('" + fullName + "', '" + contactNumber + "', '" + email + "', '" + gender + "', '" + passportNumber + "', '" + password + "')"; 
+            st.executeUpdate(query);
             System.out.println("Succesfully added");
         }
         catch(SQLException e)

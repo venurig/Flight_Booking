@@ -10,7 +10,13 @@ public class CFlight_Details
 {
     public void addFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String arrivalDate)
    {
-       MFlight_Details mfdreg = new MFlight_Details();
-       mfdreg.addFlightDetails(flightNumber, fromDestination, toDestination, departureDate, arrivalDate);
+       MFlight_Details mfdadd = new MFlight_Details();
+       mfdadd.addFlightDetails(flightNumber, fromDestination, toDestination, departureDate, arrivalDate);
+   }
+    
+    public void updateFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String arrivalDate)
+   {
+       MFlight_Details mfdadd = new MFlight_Details();
+       mfdadd.addFlightDetails(flightNumber, fromDestination, toDestination, departureDate, arrivalDate);
    }
 }

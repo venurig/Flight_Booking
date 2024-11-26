@@ -7,6 +7,7 @@ package view;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import controller.*;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
 public class VPassenger_Registration extends javax.swing.JFrame {
@@ -45,6 +46,7 @@ public class VPassenger_Registration extends javax.swing.JFrame {
         jLabel3.setText("From");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Passenger Register");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -169,20 +171,65 @@ public class VPassenger_Registration extends javax.swing.JFrame {
         String gender;
         String passportNumber;
         String password;
+        
         fullName=txtFullName.getText();
+        if (fullName.isEmpty() || !fullName.matches("[a-zA-Z ]+")) 
+        {
+            JOptionPane.showMessageDialog(this, "Full Name must contain only letters and spaces.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         contactNumber=txtContactNumber.getText();
+        if (contactNumber.isEmpty() || !contactNumber.matches("\\d+")) 
+        {
+            JOptionPane.showMessageDialog(this, "Contact Number must contain only digits.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         email=txtEmail.getText();
-        gender = null;
-        if(rbMale.isSelected()){
-            gender="Male";
+        if (email.isEmpty() || !email.matches("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,6}$")) 
+        {
+            JOptionPane.showMessageDialog(this, "Please enter a valid email address.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-        else if(rbFemale.isSelected()){
-            gender="Female";
+
+        gender = btngGender.getSelection().getActionCommand();
+        if (rbMale.isSelected()) 
+        {
+            gender = "Male";
+        } 
+        else if (rbFemale.isSelected()) 
+        {
+        gender = "Female";
         }
+        if (!rbMale.isSelected() && !rbFemale.isSelected()) 
+        {
+            JOptionPane.showMessageDialog(this, "Please select a gender.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } 
+        else 
+        {
+            gender = rbMale.isSelected() ? "Male" : "Female";
+        }
+
         passportNumber=txtPassportNumber.getText();
+        if (passportNumber.isEmpty()) 
+        {
+            JOptionPane.showMessageDialog(this, "Passport Number is required.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         password = new String(txtPassword.getPassword());
+        if (password.isEmpty() || password.length() < 8) 
+        {
+            JOptionPane.showMessageDialog(this, "Password must be at least 8 characters long.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         CPassenger_Registration passenger_reg = new CPassenger_Registration();
         passenger_reg.registerPassenger(fullName, contactNumber, email, gender, passportNumber, password);
+        
+        JOptionPane.showMessageDialog(this, "Registration successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     
