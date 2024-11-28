@@ -16,7 +16,14 @@ public class CFlight_Details
     
     public void updateFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String arrivalDate)
    {
-       MFlight_Details mfdadd = new MFlight_Details();
-       mfdadd.addFlightDetails(flightNumber, fromDestination, toDestination, departureDate, arrivalDate);
+       MFlight_Details mfdup = new MFlight_Details();
+       mfdup.updateFlightDetails(flightNumber, fromDestination, toDestination, departureDate, arrivalDate);
    }
+    
+    private MFlight_Details mfdsea = new MFlight_Details(); 
+    
+        public String getflightDetails(String flightNumber)
+        {
+            return mfdsea.searchFlightDetails(flightNumber);
+        }
 }
