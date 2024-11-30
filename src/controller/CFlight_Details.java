@@ -8,16 +8,16 @@ import model.*;
 
 public class CFlight_Details 
 {
-    public void addFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String arrivalDate)
+    public void addFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String departureTime, String arrivalDate, String arrivalTime)
    {
        MFlight_Details mfdadd = new MFlight_Details();
-       mfdadd.addFlightDetails(flightNumber, fromDestination, toDestination, departureDate, arrivalDate);
+       mfdadd.addFlightDetails(flightNumber, fromDestination, toDestination, departureDate, departureTime, arrivalDate, arrivalTime);
    }
     
-    public void updateFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String arrivalDate)
+    public void updateFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate,String departureTime, String arrivalDate, String arrivalTime)
    {
        MFlight_Details mfdupdate = new MFlight_Details();
-       mfdupdate.updateFlightDetails(flightNumber, fromDestination, toDestination, departureDate, arrivalDate);
+       mfdupdate.updateFlightDetails(flightNumber, fromDestination, toDestination, departureDate, departureTime, arrivalDate, arrivalTime);
    }
     
     public void deleteFlightDetails(String flightNumber) 
@@ -26,10 +26,10 @@ public class CFlight_Details
         mfddelete.deleteFlightDetails(flightNumber);
     }
     
-    private MFlight_Details mfdsea = new MFlight_Details(); 
-    
-        public String getflightDetails(String flightNumber)
+    private MFlight_Details mfd = new MFlight_Details();
+
+        public Flight getFlightDetails(String flightNumber) 
         {
-            return mfdsea.searchFlightDetails(flightNumber);
+            return mfd.searchFlightDetails(flightNumber);
         }
 }

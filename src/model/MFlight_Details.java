@@ -7,12 +7,12 @@ import java.sql.*;
 
 public class MFlight_Details 
 {
-    public void addFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String arrivalDate)
+    public void addFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String departureTime, String arrivalDate, String arrivalTime)
     {
         try
         {
             Statement st = DBConnection.createDBConnection().createStatement();
-            st.executeUpdate("insert into FlightDetails values('"+flightNumber+"' , '"+fromDestination+"' , '"+toDestination+"' , '"+departureDate+"' , '"+arrivalDate+"')");
+            st.executeUpdate("insert into FlightDetails values('"+flightNumber+"' , '"+fromDestination+"' , '"+toDestination+"' , '"+departureDate+"' , '"+departureTime+"' , '"+arrivalDate+"' , '"+arrivalTime+"')");
             System.out.println("Flight details succesfully added.");
         }
         catch(SQLException e)
@@ -21,12 +21,12 @@ public class MFlight_Details
         }
     }
     
-    public void updateFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String arrivalDate) 
+    public void updateFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String departureTime, String arrivalDate, String arrivalTime) 
     {
         try 
         {
             Statement st = DBConnection.createDBConnection().createStatement();
-            st.executeUpdate("UPDATE FlightDetails SET fromDestination = '"+fromDestination+"' , toDestination = '"+toDestination+"' , departureDate = '"+ departureDate+"' , arrivalDate = '"+arrivalDate+"' WHERE flightNumber = '"+flightNumber+"'");
+            st.executeUpdate("UPDATE FlightDetails SET fromDestination = '"+fromDestination+"' , toDestination = '"+toDestination+"' , departureDate = '"+ departureDate+"' , departureTime = '"+departureTime+"' , arrivalDate = '"+arrivalDate+"' , arrivalTime = '"+arrivalTime+"' WHERE flightNumber = '"+flightNumber+"'");
             System.out.println("Flight details successfully updated.");
         } 
         catch (SQLException e) {
@@ -49,42 +49,26 @@ public class MFlight_Details
         }
     }
     
-    public String searchFlightDetails(String flightNumber) 
-    {
-        String fromDestination = null;
-        String toDestination = null;
-        String departureDate = null;
-        String arrivalDate = null;
-        
-        StringBuilder flightDetails = new StringBuilder();
-        
-        try 
-        {
+    public Flight searchFlightDetails(String flightNumber) {
+        Flight flight = null;
+        try {
             Statement st = DBConnection.createDBConnection().createStatement();
-            ResultSet rs = st.executeQuery("SELECT fromDestination, toDestination, departureDate, arrivalDate FROM FlightDetails WHERE flightNumber = '"+flightNumber+"' ");
-
-            if (rs.next()) 
-            {
-                fromDestination = rs.getString("fromDestination");
-                toDestination = rs.getString("toDestination");
-                departureDate = rs.getString("departureDate");
-                arrivalDate = rs.getString("arrivalDate");
-                
-                flightDetails
-                        .append("From: ").append(fromDestination).append(", ")
-                        .append("To: ").append(toDestination).append(", ")
-                        .append("Departure: ").append(departureDate).append(", ")
-                        .append("Arrival: ").append(arrivalDate);
-            } 
-            else 
-            {
-                flightDetails.append("No flight found with flight number: ").append(flightNumber);
+            ResultSet rs = st.executeQuery("SELECT * FROM FlightDetails WHERE flightNumber = '" + flightNumber + "'");
+            
+            if (rs.next()) {
+                flight = new Flight(
+                    rs.getString("flightNumber"),
+                    rs.getString("fromDestination"),
+                    rs.getString("toDestination"),
+                    rs.getString("departureDate"),
+                    rs.getString("departureTime"),
+                    rs.getString("arrivalDate"),
+                    rs.getString("arrivalTime")
+                );
             }
-        } 
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.err.println("SQL Error: " + e.getMessage());
         }
-
-        return flightDetails.toString();
+        return flight;
     }
 }   
