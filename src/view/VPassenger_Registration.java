@@ -40,7 +40,9 @@ public class VPassenger_Registration extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         rbMale = new javax.swing.JRadioButton();
         rbFemale = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        txtUserName = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("From");
@@ -52,15 +54,15 @@ public class VPassenger_Registration extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 153));
         jLabel4.setText("Full Name");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 82, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 82, -1));
 
         txtFullName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        getContentPane().add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 368, -1));
+        getContentPane().add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 368, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 153));
         jLabel5.setText("Contact Number");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 114, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 114, -1));
 
         txtContactNumber.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtContactNumber.addActionListener(new java.awt.event.ActionListener() {
@@ -68,21 +70,21 @@ public class VPassenger_Registration extends javax.swing.JFrame {
                 txtContactNumberActionPerformed(evt);
             }
         });
-        getContentPane().add(txtContactNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 368, -1));
+        getContentPane().add(txtContactNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 368, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 153));
         jLabel6.setText("Email");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 50, 20));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 50, 20));
 
         txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtEmail.setText(" ");
-        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 368, -1));
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 368, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 153));
         jLabel7.setText("Passport Number");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, -1, -1));
 
         txtPassportNumber.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtPassportNumber.addActionListener(new java.awt.event.ActionListener() {
@@ -90,12 +92,12 @@ public class VPassenger_Registration extends javax.swing.JFrame {
                 txtPassportNumberActionPerformed(evt);
             }
         });
-        getContentPane().add(txtPassportNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, 368, -1));
+        getContentPane().add(txtPassportNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 368, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 153));
         jLabel8.setText("Password");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 82, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, 82, -1));
 
         btnRegister.setBackground(new java.awt.Color(51, 97, 228));
         btnRegister.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -106,20 +108,20 @@ public class VPassenger_Registration extends javax.swing.JFrame {
                 btnRegisterActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 580, -1, -1));
+        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 610, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 153));
         jLabel9.setText("Register");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 120, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 130, -1));
 
         txtPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, 368, -1));
+        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, 368, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 153));
         jLabel10.setText("Gender");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 60, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 60, -1));
 
         btngGender.add(rbMale);
         rbMale.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -129,7 +131,7 @@ public class VPassenger_Registration extends javax.swing.JFrame {
                 rbMaleActionPerformed(evt);
             }
         });
-        getContentPane().add(rbMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 98, -1));
+        getContentPane().add(rbMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 98, -1));
 
         btngGender.add(rbFemale);
         rbFemale.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -139,11 +141,23 @@ public class VPassenger_Registration extends javax.swing.JFrame {
                 rbFemaleActionPerformed(evt);
             }
         });
-        getContentPane().add(rbFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 98, -1));
+        getContentPane().add(rbFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 98, -1));
 
-        jLabel2.setForeground(new java.awt.Color(51, 97, 228));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 680));
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel11.setText("User Name");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, -1, -1));
+
+        txtUserName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtUserName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUserNameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 368, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 680));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -170,6 +184,7 @@ public class VPassenger_Registration extends javax.swing.JFrame {
         String email;
         String gender;
         String passportNumber;
+        String userName;
         String password;
         
         fullName=txtFullName.getText();
@@ -218,6 +233,23 @@ public class VPassenger_Registration extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Passport Number is required.", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+         
+        userName = txtUserName.getText();
+        if (userName.isEmpty()) 
+        {
+            JOptionPane.showMessageDialog(this, "Username is required.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (!userName.matches("^[a-zA-Z0-9_]+$")) 
+        {
+            JOptionPane.showMessageDialog(this, "Username must contain only alphanumeric characters or underscores.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (userName.length() < 5 || userName.length() > 15) 
+        {
+            JOptionPane.showMessageDialog(this, "Username must be between 5 and 15 characters.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
         password = new String(txtPassword.getPassword());
         if (password.isEmpty() || password.length() < 8) 
@@ -227,10 +259,18 @@ public class VPassenger_Registration extends javax.swing.JFrame {
         }
         
         CPassenger_Registration passenger_reg = new CPassenger_Registration();
-        passenger_reg.registerPassenger(fullName, contactNumber, email, gender, passportNumber, password);
+        passenger_reg.registerPassenger(fullName, contactNumber, email, gender, passportNumber, userName, password);
         
         JOptionPane.showMessageDialog(this, "Registration successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        
+        VLogin loginf = new VLogin(); 
+        loginf.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnRegisterActionPerformed
+
+    private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUserNameActionPerformed
 
     
     public static void main(String args[]) {
@@ -245,8 +285,9 @@ public class VPassenger_Registration extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegister;
     private javax.swing.ButtonGroup btngGender;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -261,5 +302,7 @@ public class VPassenger_Registration extends javax.swing.JFrame {
     private javax.swing.JTextField txtFullName;
     private javax.swing.JTextField txtPassportNumber;
     private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
+
 }

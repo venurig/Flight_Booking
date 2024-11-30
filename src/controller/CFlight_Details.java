@@ -16,9 +16,15 @@ public class CFlight_Details
     
     public void updateFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String arrivalDate)
    {
-       MFlight_Details mfdup = new MFlight_Details();
-       mfdup.updateFlightDetails(flightNumber, fromDestination, toDestination, departureDate, arrivalDate);
+       MFlight_Details mfdupdate = new MFlight_Details();
+       mfdupdate.updateFlightDetails(flightNumber, fromDestination, toDestination, departureDate, arrivalDate);
    }
+    
+    public void deleteFlightDetails(String flightNumber) 
+    {
+        MFlight_Details mfddelete = new MFlight_Details();
+        mfddelete.deleteFlightDetails(flightNumber);
+    }
     
     private MFlight_Details mfdsea = new MFlight_Details(); 
     

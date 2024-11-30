@@ -7,9 +7,9 @@ import model.*;
 
 public class CPassenger_Registration 
 {
-    public void registerPassenger(String fullName, String contactNumber, String email, String gender, String passportNumber, String password)
+    public void registerPassenger(String fullName, String contactNumber, String email, String gender, String passportNumber, String userName, String password)
    {
        MPassenger_Registration mcureg = new MPassenger_Registration();
-       mcureg.registerPassenger(fullName, contactNumber, email, gender, passportNumber, password);
+       mcureg.registerPassenger(fullName, contactNumber, email, gender, passportNumber, userName, password);
    }
 }

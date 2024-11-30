@@ -13,7 +13,7 @@ public class MFlight_Details
         {
             Statement st = DBConnection.createDBConnection().createStatement();
             st.executeUpdate("insert into FlightDetails values('"+flightNumber+"' , '"+fromDestination+"' , '"+toDestination+"' , '"+departureDate+"' , '"+arrivalDate+"')");
-            System.out.println("Succesfully added");
+            System.out.println("Flight details succesfully added.");
         }
         catch(SQLException e)
         {
@@ -35,12 +35,26 @@ public class MFlight_Details
         }
     }
     
+    public void deleteFlightDetails(String flightNumber) 
+    {
+        try 
+        {
+            Statement st = DBConnection.createDBConnection().createStatement();
+            st.executeUpdate("DELETE FROM FlightDetails WHERE flightNumber = '"+flightNumber+"' ");
+            System.out.println("Flight details successfully deleted.");
+        } 
+        catch (SQLException e) 
+        {
+            System.err.println("SQL Error: " + e.getMessage());
+        }
+    }
+    
     public String searchFlightDetails(String flightNumber) 
     {
         String fromDestination = null;
         String toDestination = null;
-        Date departureDate = null;
-        Date arrivalDate = null;
+        String departureDate = null;
+        String arrivalDate = null;
         
         StringBuilder flightDetails = new StringBuilder();
         
@@ -53,8 +67,8 @@ public class MFlight_Details
             {
                 fromDestination = rs.getString("fromDestination");
                 toDestination = rs.getString("toDestination");
-                departureDate = rs.getDate("departureDate");
-                arrivalDate = rs.getDate("arrivalDate");
+                departureDate = rs.getString("departureDate");
+                arrivalDate = rs.getString("arrivalDate");
                 
                 flightDetails
                         .append("From: ").append(fromDestination).append(", ")
