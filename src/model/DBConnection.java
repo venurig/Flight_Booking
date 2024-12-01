@@ -4,10 +4,7 @@
  */
 package model;
 import java.sql.*;
-/**
- *
- * @author V E N U R I
- */
+
 public class DBConnection 
 {
  private static Connection con;

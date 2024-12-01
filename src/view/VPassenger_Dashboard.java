@@ -34,7 +34,7 @@ public class VPassenger_Dashboard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnHome = new javax.swing.JButton();
-        btnFlightBooking = new javax.swing.JButton();
+        btnFlightDetails = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -58,11 +58,11 @@ public class VPassenger_Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnFlightBooking.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnFlightBooking.setText("Flight Booking");
-        btnFlightBooking.addActionListener(new java.awt.event.ActionListener() {
+        btnFlightDetails.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnFlightDetails.setText("Flight Details");
+        btnFlightDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFlightBookingActionPerformed(evt);
+                btnFlightDetailsActionPerformed(evt);
             }
         });
 
@@ -83,7 +83,7 @@ public class VPassenger_Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnFlightBooking, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnFlightDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
@@ -95,7 +95,7 @@ public class VPassenger_Dashboard extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addComponent(btnHome)
                 .addGap(28, 28, 28)
-                .addComponent(btnFlightBooking)
+                .addComponent(btnFlightDetails)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 254, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(67, 67, 67))
@@ -141,11 +141,11 @@ public class VPassenger_Dashboard extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnHomeActionPerformed
 
-    private void btnFlightBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFlightBookingActionPerformed
-        VFlight_Booking fBooking = new VFlight_Booking();
+    private void btnFlightDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFlightDetailsActionPerformed
+        VPassenger_View_Flight_Details fBooking = new VPassenger_View_Flight_Details();
         fBooking.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnFlightBookingActionPerformed
+    }//GEN-LAST:event_btnFlightDetailsActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         VLogin login = new VLogin();
@@ -189,7 +189,7 @@ public class VPassenger_Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnFlightBooking;
+    private javax.swing.JButton btnFlightDetails;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnLogout;
     private javax.swing.JLabel jLabel1;

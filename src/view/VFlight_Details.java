@@ -349,7 +349,7 @@ public class VFlight_Details extends javax.swing.JFrame {
             }
             
             
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyy-MM-dd");
             departureDate = sdf.format(datecDepartureDate.getDate());
             arrivalDate = sdf.format(datecArrivalDate.getDate());
             
