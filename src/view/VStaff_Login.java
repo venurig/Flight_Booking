@@ -14,12 +14,12 @@ import java.awt.event.*;
  *
  * @author V E N U R I
  */
-public class VPassenger_Login extends javax.swing.JFrame {
+public class VStaff_Login extends javax.swing.JFrame {
 
     /**
      * Creates new form VLogin
      */
-    public VPassenger_Login() {
+    public VStaff_Login() {
         initComponents();
         
         Image icon = new ImageIcon(this.getClass().getResource("/logo.png")).getImage();
@@ -40,9 +40,6 @@ public class VPassenger_Login extends javax.swing.JFrame {
         txtUserName = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        lblRegister = new javax.swing.JLabel();
-        lblStaffLogin = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -80,29 +77,6 @@ public class VPassenger_Login extends javax.swing.JFrame {
         });
         getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 364, -1));
 
-        jLabel1.setText("Don't have an account?");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, -1, -1));
-
-        lblRegister.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblRegister.setForeground(new java.awt.Color(0, 0, 153));
-        lblRegister.setText("Register");
-        lblRegister.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblRegisterMouseClicked(evt);
-            }
-        });
-        getContentPane().add(lblRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, -1, -1));
-
-        lblStaffLogin.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        lblStaffLogin.setForeground(new java.awt.Color(0, 0, 153));
-        lblStaffLogin.setText("STAFF LOGIN");
-        lblStaffLogin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblStaffLoginMouseClicked(evt);
-            }
-        });
-        getContentPane().add(lblStaffLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, -1, -1));
-
         txtPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 364, -1));
 
@@ -134,22 +108,10 @@ public class VPassenger_Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Password should not be empty.","Error", JOptionPane.ERROR_MESSAGE);
         }
         
-        CPassenger_Login passenger_login = new CPassenger_Login();
-        passenger_login.loginPassenger(userName, password);
+        CStaff_Login staff_login = new CStaff_Login();
+        staff_login.loginStaff(userName, password);
         
     }//GEN-LAST:event_btnLoginActionPerformed
-
-    private void lblRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegisterMouseClicked
-        VPassenger_Registration PregisterForm = new VPassenger_Registration();
-        PregisterForm.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_lblRegisterMouseClicked
-
-    private void lblStaffLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblStaffLoginMouseClicked
-        VStaff_Login slogin = new VStaff_Login();
-        slogin.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_lblStaffLoginMouseClicked
 
     /**
      * @param args the command line arguments
@@ -168,35 +130,34 @@ public class VPassenger_Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VPassenger_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VStaff_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VPassenger_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VStaff_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VPassenger_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VStaff_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VPassenger_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VStaff_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VPassenger_Login().setVisible(true);
+                new VStaff_Login().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel lblRegister;
-    private javax.swing.JLabel lblStaffLogin;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
