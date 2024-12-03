@@ -14,10 +14,11 @@ public class CFlight_Details
        mfdadd.addFlightDetails(flightNumber, fromDestination, toDestination, departureDate, departureTime, arrivalDate, arrivalTime);
    }
     
+    private MFlight_Details mFlightDetails = new MFlight_Details();
+
     public List<String> getAllFlightNumbers() 
     {
-        MFlight_Details mfd = new MFlight_Details();
-        return mfd.getAllFlightNumbers();
+        return mFlightDetails.getAllFlightNumbers();
     }
     
     public void updateFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate,String departureTime, String arrivalDate, String arrivalTime)

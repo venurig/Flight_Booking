@@ -32,6 +32,7 @@ public class VStaff_Dashboard extends javax.swing.JFrame {
         btnFlightDetails = new javax.swing.JButton();
         btnReports = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        btnFlightTickets = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -70,6 +71,14 @@ public class VStaff_Dashboard extends javax.swing.JFrame {
             }
         });
 
+        btnFlightTickets.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnFlightTickets.setText("Flight Tickets");
+        btnFlightTickets.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFlightTicketsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -81,7 +90,8 @@ public class VStaff_Dashboard extends javax.swing.JFrame {
                     .addComponent(btnHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnFlightDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnFlightTickets, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -94,6 +104,8 @@ public class VStaff_Dashboard extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(btnFlightDetails)
                 .addGap(27, 27, 27)
+                .addComponent(btnFlightTickets)
+                .addGap(28, 28, 28)
                 .addComponent(btnReports)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLogout)
@@ -126,8 +138,8 @@ public class VStaff_Dashboard extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -150,6 +162,12 @@ public class VStaff_Dashboard extends javax.swing.JFrame {
        slogin.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void btnFlightTicketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFlightTicketsActionPerformed
+       VFlight_Tickets fTickets = new VFlight_Tickets();
+       fTickets.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_btnFlightTicketsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,6 +206,7 @@ public class VStaff_Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFlightDetails;
+    private javax.swing.JButton btnFlightTickets;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnReports;

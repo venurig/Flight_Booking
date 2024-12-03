@@ -29,11 +29,38 @@ public class Flight
         this.arrivalTime = arrivalTime;
     }
 
-    public String getFlightNumber() { return flightNumber; }
-    public String getFromDestination() { return fromDestination; }
-    public String getToDestination() { return toDestination; }
-    public String getDepartureDate() { return departureDate; }
-    public String getDepartureTime() { return departureTime; }
-    public String getArrivalDate() { return arrivalDate; }
-    public String getArrivalTime() { return arrivalTime; }
+    public String getFlightNumber() 
+    { 
+        return flightNumber; 
+    }
+    
+    public String getFromDestination() 
+    {
+        return fromDestination; 
+    }
+    
+    public String getToDestination() 
+    {
+        return toDestination; 
+    }
+    
+    public String getDepartureDate()
+    {
+        return departureDate; 
+    }
+    
+    public String getDepartureTime() 
+    {
+        return departureTime; 
+    }
+    
+    public String getArrivalDate() 
+    {
+        return arrivalDate; 
+    }
+    
+    public String getArrivalTime() 
+    {
+        return arrivalTime; 
+    }
 }

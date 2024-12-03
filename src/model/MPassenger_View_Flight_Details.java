@@ -18,13 +18,13 @@ public class MPassenger_View_Flight_Details
     {
         List<Object[]> flightData = new ArrayList<>();
 
-        String query = "SELECT f.flightNumber, fd.fromDestination, fd.toDestination, fd.departureDate, "
-                     + "fd.departureTime, fd.arrivalDate, fd.arrivalTime, f.class, f.ticketPrice * ? AS totalTicketPrice "
-                     + "FROM Flight f "
-                     + "JOIN FlightDetails fd ON f.flightNumber = fd.flightNumber "
+        String query = "SELECT ft.flightNumber, fd.fromDestination, fd.toDestination, fd.departureDate, "
+                     + "fd.departureTime, fd.arrivalDate, fd.arrivalTime, ft.flightClass, ft.ticketPrice * ? AS totalTicketPrice "
+                     + "FROM FlightTicket ft "
+                     + "JOIN FlightDetails fd ON ft.flightNumber = fd.flightNumber "
                      + "WHERE TRIM(LOWER(fd.fromDestination)) = TRIM(LOWER(?)) "
                      + "AND TRIM(LOWER(fd.toDestination)) = TRIM(LOWER(?)) "
-                     + "AND TRIM(LOWER(f.class)) = TRIM(LOWER(?))";
+                     + "AND TRIM(LOWER(ft.flightClass)) = TRIM(LOWER(?))";
 
         try (Connection con = DBConnection.createDBConnection();
              PreparedStatement pst = con.prepareStatement(query)) 
@@ -53,7 +53,7 @@ public class MPassenger_View_Flight_Details
                     row[4] = rs.getTime("departureTime");
                     row[5] = rs.getDate("arrivalDate");
                     row[6] = rs.getTime("arrivalTime");
-                    row[7] = rs.getString("class");
+                    row[7] = rs.getString("flightClass");
                     row[8] = rs.getDouble("totalTicketPrice");
                     flightData.add(row);
                 }
