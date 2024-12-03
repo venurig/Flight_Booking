@@ -3,13 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
+import controller.LoggedInUser;
 import java.sql.ResultSet;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import view.VPassenger_Dashboard;
 
 
-public class MLogin 
+public class MPassenger_Login 
 {
    public void loginPassenger(String userName , String password)
     {
@@ -24,6 +25,7 @@ public class MLogin
             ResultSet rs = ps.executeQuery();
             if (rs.next()) 
             {
+                LoggedInUser.setUser(userName, password);
                 JOptionPane.showMessageDialog(null, "Login successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
             }

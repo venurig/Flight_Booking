@@ -99,7 +99,7 @@ public class VPassenger_Registration extends javax.swing.JFrame {
         jLabel8.setText("Password");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, 82, -1));
 
-        btnRegister.setBackground(new java.awt.Color(51, 97, 228));
+        btnRegister.setBackground(new java.awt.Color(0, 0, 153));
         btnRegister.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnRegister.setText("Register");
@@ -263,7 +263,7 @@ public class VPassenger_Registration extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(this, "Registration successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
         
-        VLogin loginf = new VLogin(); 
+        VPassenger_Login loginf = new VPassenger_Login(); 
         loginf.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegisterActionPerformed

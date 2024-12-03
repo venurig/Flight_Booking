@@ -4,6 +4,8 @@
  */
 package model;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MFlight_Details 
 {
@@ -19,6 +21,20 @@ public class MFlight_Details
         {
             System.err.println(e.getMessage());
         }
+    }
+    
+    public List<String> getAllFlightNumbers() {
+        List<String> flightNumbers = new ArrayList<>();
+        try {
+            Statement st = DBConnection.createDBConnection().createStatement();
+            ResultSet rs = st.executeQuery("SELECT flightNumber FROM FlightDetails");
+            while (rs.next()) {
+                flightNumbers.add(rs.getString("flightNumber"));
+            }
+        } catch (SQLException e) {
+            System.err.println("Error fetching flight numbers: " + e.getMessage());
+        }
+        return flightNumbers;
     }
     
     public void updateFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate, String departureTime, String arrivalDate, String arrivalTime) 

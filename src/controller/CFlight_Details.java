@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
-import java.util.Date;
+import java.util.List;
 import model.*;
 
 public class CFlight_Details 
@@ -13,6 +13,12 @@ public class CFlight_Details
        MFlight_Details mfdadd = new MFlight_Details();
        mfdadd.addFlightDetails(flightNumber, fromDestination, toDestination, departureDate, departureTime, arrivalDate, arrivalTime);
    }
+    
+    public List<String> getAllFlightNumbers() 
+    {
+        MFlight_Details mfd = new MFlight_Details();
+        return mfd.getAllFlightNumbers();
+    }
     
     public void updateFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate,String departureTime, String arrivalDate, String arrivalTime)
    {

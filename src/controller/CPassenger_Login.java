@@ -6,11 +6,11 @@ package controller;
 import model.*;
 
 
-public class CLogin 
+public class CPassenger_Login 
 {
     public void loginPassenger(String userName, String password) 
     {
-        MLogin mlog = new MLogin(); 
+        MPassenger_Login mlog = new MPassenger_Login(); 
         mlog.loginPassenger(userName, password); 
     }
 }
