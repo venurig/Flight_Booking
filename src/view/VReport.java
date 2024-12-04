@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Report;
+package view;
 import view.*;
 import java.awt.BorderLayout;
 import java.awt.Image;
@@ -234,8 +234,8 @@ public class VReport extends javax.swing.JFrame {
 
             Connection con = DBConnection.createDBConnection();
 
-            String jrxmlPath = "C:\\Users\\V E N U R I\\OneDrive - National Institute of Business Management\\Documents\\NetBeansProjects\\Flight_Booking_System\\src\\Report\\Booking_Report.jrxml";
-            String jasperPath = "C:\\Users\\V E N U R I\\OneDrive - National Institute of Business Management\\Documents\\NetBeansProjects\\Flight_Booking_System\\src\\Report\\Booking_Report.jasper";
+            String jrxmlPath = "D:\\Users\\venuri\\GitHub\\Flight_Booking_System\\src\\Report\\Booking_Report.jrxml";
+            String jasperPath = "D:\\Users\\venuri\\GitHub\\Flight_Booking_System\\src\\Report\\Booking_Report.jasper";
 
             
             File jasperFile = new File(jasperPath);
