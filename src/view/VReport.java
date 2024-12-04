@@ -7,16 +7,22 @@ import view.*;
 import java.awt.BorderLayout;
 import java.awt.Image;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.sql.Connection; // Correct import
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import model.DBConnection;
+import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.swing.JRViewer;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -226,38 +232,13 @@ public class VReport extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFlightTicketsActionPerformed
 
     private void btnGenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateReportActionPerformed
-        try 
-        {
-            jPanel2.removeAll();
-            jPanel2.setLayout(new java.awt.BorderLayout());
-
-
-            Connection con = DBConnection.createDBConnection();
-
-            String jrxmlPath = "D:\\Users\\venuri\\GitHub\\Flight_Booking_System\\src\\Report\\Booking_Report.jrxml";
-            String jasperPath = "D:\\Users\\venuri\\GitHub\\Flight_Booking_System\\src\\Report\\Booking_Report.jasper";
-
-            
-            File jasperFile = new File(jasperPath);
-            if (!jasperFile.exists()) 
-            {
-            
-                JasperCompileManager.compileReportToFile(jrxmlPath, jasperPath);
-            }
-            
-            Map<String, Object> parameters = new HashMap<>();
-
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperPath, parameters, con);
-
-            JRViewer viewer = new JRViewer(jasperPrint);
-
-            jPanel2.add(viewer);
-            jPanel2.revalidate();  
-            jPanel2.repaint();    
-        } 
-        catch (Exception e) 
-        {
-            JOptionPane.showMessageDialog(this, "Error generating report: " + e.getMessage(), "Report Error", JOptionPane.ERROR_MESSAGE);
+        try {
+            InputStream reportStream = new FileInputStream("C:\\path\\to\\report.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(reportStream);
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + e.getMessage());
+        } catch (JRException e) {
+            System.out.println("JasperReports Exception: " + e.getMessage());
         }
     }//GEN-LAST:event_btnGenerateReportActionPerformed
 
