@@ -41,6 +41,7 @@ public class VStaff_Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
         txtPassword = new javax.swing.JPasswordField();
+        lblUserLogin = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,6 +80,16 @@ public class VStaff_Login extends javax.swing.JFrame {
         txtPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 364, -1));
 
+        lblUserLogin.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        lblUserLogin.setForeground(new java.awt.Color(0, 0, 153));
+        lblUserLogin.setText("USER LOGIN");
+        lblUserLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblUserLoginMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblUserLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, -1, -1));
+
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Login.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 490));
 
@@ -106,6 +117,12 @@ public class VStaff_Login extends javax.swing.JFrame {
         staff_login.loginStaff(userName, password);
         
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void lblUserLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUserLoginMouseClicked
+        VPassenger_Login plogin = new VPassenger_Login();
+        plogin.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblUserLoginMouseClicked
 
     /**
      * @param args the command line arguments
@@ -151,6 +168,7 @@ public class VStaff_Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel lblUserLogin;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables

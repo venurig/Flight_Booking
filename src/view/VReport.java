@@ -107,6 +107,11 @@ public class VReport extends javax.swing.JFrame
 
         btnReports.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnReports.setText("Reports");
+        btnReports.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportsActionPerformed(evt);
+            }
+        });
 
         btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLogout.setText("Logout");
@@ -265,6 +270,12 @@ public class VReport extends javax.swing.JFrame
     private void btnGenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateReportActionPerformed
         generateReport();
     }//GEN-LAST:event_btnGenerateReportActionPerformed
+
+    private void btnReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportsActionPerformed
+       VReport report = new VReport();
+       report.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_btnReportsActionPerformed
 
     /**
      * @param args the command line arguments

@@ -544,7 +544,9 @@ public class VFlight_Details extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFlightDetailsActionPerformed
 
     private void btnReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportsActionPerformed
-        // TODO add your handling code here:
+       VReport report = new VReport();
+       report.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_btnReportsActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
