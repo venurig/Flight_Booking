@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="755" pageHeight="842" columnWidth="715" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6e341b65-1341-4c77-8ff1-5024a793ed98">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+    fb.flightNumber, 
+    fb.bookingID, 
+    fb.passengerID, 
+    rd.fullName,
+    rd.passportNumber,    
+    fb.flightClass, 
+    fb.passengers
+FROM 
+    flightBooking fb
+INNER JOIN 
+    registerDetails rd 
+ON 
+    fb.passengerID = rd.passengerID;]]>
+	</queryString>
+	<field name="flightNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bookingID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="passengerID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fullName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="passportNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="flightClass" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="passengers" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="29" width="82" height="20" uuid="68b0c1da-af0d-4c0e-a0d9-4ad725842425"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Flight Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="109" y="29" width="77" height="20" uuid="c41e172e-f1a7-46b3-a608-6b2e4240a3e4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Booking ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="29" width="72" height="20" uuid="5348ced6-1d98-41a3-b976-a16cdb50ec8d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Passenger ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="29" width="59" height="20" uuid="019e7bd8-00a8-42e9-88e7-8e65d6fd0d72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Full Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="434" y="29" width="92" height="20" uuid="4fd357cb-fc13-4d79-8b88-409258451fd2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Passport Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="553" y="29" width="63" height="20" uuid="dad5b941-2266-4e83-9005-0a73a1fc6622"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Flight Class]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="639" y="29" width="63" height="20" uuid="9cfda37c-0ae7-4086-ae48-2236588da626"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Passengers]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="9" width="91" height="20" uuid="44a63eb4-f1ec-43b6-b2a5-d6ffbc60b588"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{flightNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="9" width="77" height="20" uuid="b126afbf-4183-4a4f-90ca-fb4493fb3780"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bookingID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="9" width="85" height="20" uuid="43714217-79c2-4076-86f0-100a1eb20654"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{passengerID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="296" y="9" width="122" height="20" uuid="04a92f9b-32b4-4d23-ab80-208ac56fe6df"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fullName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="9" width="104" height="20" uuid="1236626e-c6c7-4f96-b7bd-1722623ff248"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{passportNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="546" y="9" width="77" height="20" uuid="1b7bae28-8217-4635-b1ca-f0b8bd496e1d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{flightClass}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="634" y="9" width="78" height="20" uuid="63742006-76db-4e4c-94d1-d8d8f5c5bfda"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{passengers}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="3" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="3" splitType="Stretch"/>
+	</summary>
+</jasperReport>

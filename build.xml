@@ -10,7 +10,24 @@
 <project name="Flight_Booking_System" default="default" basedir=".">
     <description>Builds, tests, and runs the project Flight_Booking_System.</description>
     <import file="nbproject/build-impl.xml"/>
-    <!--
+    <path id="jasperreports.classpath">
+        <fileset dir="C:/path/to/jasperreports/lib">
+            <include name="jasperreports-7.0.0.jar"/>
+        </fileset>
+    </path>
+
+    <import file="nbproject/build-impl.xml"/>
+
+    <target name="compile">
+        <!-- Compilation task goes here -->
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="${dist.dir}/Flight_Booking_System.jar">
+            <fileset dir="${build.classes.dir}"/>
+            <classpath refid="jasperreports.classpath"/>
+        </jar>
+    </target>
 
     There exist several targets which are by default empty and which can be 
     used for execution of your tasks. These targets are usually executed 

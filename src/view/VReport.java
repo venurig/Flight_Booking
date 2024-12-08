@@ -3,14 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-import view.*;
+import model.*;
 import java.awt.BorderLayout;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.sql.Connection; // Correct import
+ 
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.ImageIcon;
@@ -233,12 +233,12 @@ public class VReport extends javax.swing.JFrame {
 
     private void btnGenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateReportActionPerformed
         try {
-            InputStream reportStream = new FileInputStream("C:\\path\\to\\report.jrxml");
-            JasperReport jasperReport = JasperCompileManager.compileReport(reportStream);
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + e.getMessage());
-        } catch (JRException e) {
-            System.out.println("JasperReports Exception: " + e.getMessage());
+            String reportPath = "C:\\Users\\V E N U R I\\Documents\\GitHub\\Flight_Booking_System\\src\\model\\Flight_Booking_Report.jrxml";
+            JasperReport jr = JasperCompileManager.compileReport(reportPath);
+            JasperPrint jp = JasperFillManager.fillReport(jr, null, DBConnection.createDBConnection());
+            JasperViewer.viewReport(jp);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_btnGenerateReportActionPerformed
 
