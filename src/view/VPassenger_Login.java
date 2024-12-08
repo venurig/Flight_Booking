@@ -44,7 +44,6 @@ public class VPassenger_Login extends javax.swing.JFrame {
         lblRegister = new javax.swing.JLabel();
         lblStaffLogin = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
-        jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -78,10 +77,10 @@ public class VPassenger_Login extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 364, -1));
+        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 364, -1));
 
         jLabel1.setText("Don't have an account?");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, -1, -1));
 
         lblRegister.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblRegister.setForeground(new java.awt.Color(0, 0, 153));
@@ -91,7 +90,7 @@ public class VPassenger_Login extends javax.swing.JFrame {
                 lblRegisterMouseClicked(evt);
             }
         });
-        getContentPane().add(lblRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, -1, -1));
+        getContentPane().add(lblRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, -1, -1));
 
         lblStaffLogin.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         lblStaffLogin.setForeground(new java.awt.Color(0, 0, 153));
@@ -105,11 +104,6 @@ public class VPassenger_Login extends javax.swing.JFrame {
 
         txtPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 364, -1));
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel8.setText("Forget Password?");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Login.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 490));
@@ -194,7 +188,6 @@ public class VPassenger_Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel lblRegister;
     private javax.swing.JLabel lblStaffLogin;
     private javax.swing.JPasswordField txtPassword;
