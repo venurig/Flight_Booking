@@ -37,6 +37,7 @@ public class VFlight_Tickets extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMonthChooser1 = new com.toedter.calendar.JMonthChooser();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnHome = new javax.swing.JButton();
@@ -330,26 +331,30 @@ public class VFlight_Tickets extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbFlightNumberActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-    try 
-    {
-        String flightNumber;
-        String flightClass;
-        double ticketPrice;
+        try 
+        {
+            String flightNumber = cmbFlightNumber.getSelectedItem() != null ? cmbFlightNumber.getSelectedItem().toString() : "";
+            String flightClass = cmbClass.getSelectedItem() != null ? cmbClass.getSelectedItem().toString() : "";
+            double ticketPrice = (double) spTicketPrice.getValue();
 
-        flightNumber = cmbFlightNumber.getSelectedItem().toString();
-        if (flightNumber.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Flight number is required.", "Validation Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+            if (flightNumber.isEmpty()) 
+            {
+                JOptionPane.showMessageDialog(this, "Flight number is required.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
-        flightClass = cmbClass.getSelectedItem().toString();
-        if (flightClass.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Flight class is required.", "Validation Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+            if (flightClass.isEmpty()) 
+            {
+                JOptionPane.showMessageDialog(this, "Flight class is required.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
-        ticketPrice = (double) spTicketPrice.getValue();
-        
+            if (ticketPrice <= 0) 
+            {
+                JOptionPane.showMessageDialog(this, "Ticket price must be greater than 0.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
             CFlight_Tickets ticket_add = new CFlight_Tickets();
             ticket_add.addFlightTicket(flightNumber, flightClass, ticketPrice);
             JOptionPane.showMessageDialog(this, "Flight ticket price added successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
@@ -373,6 +378,25 @@ public class VFlight_Tickets extends javax.swing.JFrame {
             flightNumber = cmbFlightNumber.getSelectedItem().toString();
             flightClass = cmbClass.getSelectedItem().toString();
             ticketPrice = (double) spTicketPrice.getValue();
+            
+            if (cmbFlightNumber.getSelectedItem() == null || cmbFlightNumber.getSelectedItem().toString().isEmpty()) 
+            {
+                JOptionPane.showMessageDialog(this, "Please select a valid flight number.", "Validation Error", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            if (cmbClass.getSelectedItem() == null || cmbClass.getSelectedItem().toString().isEmpty())
+            {
+                JOptionPane.showMessageDialog(this, "Please select a valid flight class.", "Validation Error", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            Object ticketPriceValue = spTicketPrice.getValue();
+            if (ticketPriceValue == null || !(ticketPriceValue instanceof Double) || (Double) ticketPriceValue <= 0) 
+            {
+                JOptionPane.showMessageDialog(this, "Please enter a valid ticket price greater than 0.", "Validation Error", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
         
             CFlight_Tickets ticket_update = new CFlight_Tickets();
             ticket_update.updateFlightTicket(flightNumber, flightClass, ticketPrice);
@@ -495,6 +519,7 @@ public class VFlight_Tickets extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
+    private com.toedter.calendar.JMonthChooser jMonthChooser1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSpinner spTicketPrice;

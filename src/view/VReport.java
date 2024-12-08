@@ -3,43 +3,67 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-import model.*;
 import java.awt.BorderLayout;
 import java.awt.Image;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
- 
+import java.sql.Connection; 
 import java.util.HashMap;
-import java.util.Map;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import model.DBConnection;
+import javax.swing.SwingUtilities;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.swing.JRViewer;
-import net.sf.jasperreports.view.JasperViewer;
+import model.*; 
+
 
 /**
  *
  * @author V E N U R I
  */
-public class VReport extends javax.swing.JFrame {
-
-    /**
-     * Creates new form VStaff_Dashboard
-     */
+public class VReport extends javax.swing.JFrame 
+{
+    
     public VReport() {
         initComponents();
+        
+        reportPanel.setLayout(new java.awt.BorderLayout());
         
         Image icon = new ImageIcon(this.getClass().getResource("/logo.png")).getImage();
         this.setIconImage(icon);
     }
 
+    private void generateReport()
+    {
+        try 
+        {
+            JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\V E N U R I\\Documents\\GitHub\\Flight_Booking_System\\src\\model\\Flight_Booking_Report.jrxml"); 
+            
+            Connection con = DBConnection.createDBConnection();
+            
+            if (con != null) 
+            {
+                JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, new HashMap<>(), con);
+                JRViewer viewer = new JRViewer(jasperPrint);
+
+                reportPanel.removeAll();
+                reportPanel.add(viewer, BorderLayout.CENTER);
+                reportPanel.revalidate();
+                reportPanel.repaint();
+            }
+            else 
+            {
+                JOptionPane.showMessageDialog(this, "Error: Unable to establish database connection.");
+            }
+        } 
+        catch (Exception ex) 
+        {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
+        }
+    }  
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -55,7 +79,8 @@ public class VReport extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnGenerateReport = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        reportPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Booking Report");
@@ -136,7 +161,7 @@ public class VReport extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel2.setText("BOOKING REPORT");
+        jLabel2.setText("REPORTS");
 
         btnGenerateReport.setBackground(new java.awt.Color(0, 0, 153));
         btnGenerateReport.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -148,39 +173,45 @@ public class VReport extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel3.setText("Flight Booking Report");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(219, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(193, 193, 193))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addContainerGap(285, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(267, 267, 267))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
                 .addComponent(btnGenerateReport)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addComponent(btnGenerateReport)
-                .addGap(31, 31, 31))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(btnGenerateReport))
+                .addGap(44, 44, 44))
         );
 
-        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout reportPanelLayout = new javax.swing.GroupLayout(reportPanel);
+        reportPanel.setLayout(reportPanelLayout);
+        reportPanelLayout.setHorizontalGroup(
+            reportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        reportPanelLayout.setVerticalGroup(
+            reportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -193,7 +224,7 @@ public class VReport extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(reportPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,7 +232,7 @@ public class VReport extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(reportPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -232,53 +263,23 @@ public class VReport extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFlightTicketsActionPerformed
 
     private void btnGenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateReportActionPerformed
-        try {
-            String reportPath = "C:\\Users\\V E N U R I\\Documents\\GitHub\\Flight_Booking_System\\src\\model\\Flight_Booking_Report.jrxml";
-            JasperReport jr = JasperCompileManager.compileReport(reportPath);
-            JasperPrint jp = JasperFillManager.fillReport(jr, null, DBConnection.createDBConnection());
-            JasperViewer.viewReport(jp);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        generateReport();
     }//GEN-LAST:event_btnGenerateReportActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VReport.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VReport.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VReport.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VReport.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+    public static void main(String args[]) 
+    {  
+        java.awt.EventQueue.invokeLater(new Runnable() 
+        {
+            public void run() 
+            {
                 new VReport().setVisible(true);
             }
         });
     }
+                
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFlightDetails;
@@ -289,8 +290,9 @@ public class VReport extends javax.swing.JFrame {
     private javax.swing.JButton btnReports;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel reportPanel;
     // End of variables declaration//GEN-END:variables
 }

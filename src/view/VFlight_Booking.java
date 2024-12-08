@@ -286,39 +286,57 @@ public class VFlight_Booking extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFlightBookingActionPerformed
 
     private void btnBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookingActionPerformed
-        try
-        {
-            String flightNumber;
-            String fromDestination;
-            String toDestination;
-            String flightClass;
-            int passengers;
+        try {
+            String flightNumber = cmbFlightNumber.getSelectedItem() != null ? cmbFlightNumber.getSelectedItem().toString() : "";
+            String fromDestination = cmbFrom.getSelectedItem() != null ? cmbFrom.getSelectedItem().toString() : "";
+            String toDestination = cmbTo.getSelectedItem() != null ? cmbTo.getSelectedItem().toString() : "";
+            String flightClass = cmbClass.getSelectedItem() != null ? cmbClass.getSelectedItem().toString() : "";
+            int passengers = (int) spPassengers.getValue();
+
             
-            flightNumber=cmbFlightNumber.getSelectedItem().toString();
-            fromDestination=cmbFrom.getSelectedItem().toString();
-            toDestination=cmbTo.getSelectedItem().toString();
-            flightClass=cmbClass.getSelectedItem().toString();
-            passengers = (int) spPassengers.getValue();
-            
-            String username = LoggedInUser.username; 
+            if (flightNumber.isEmpty()) 
+            {
+                throw new Exception("Please select a valid flight number.");
+            }
+            if (fromDestination.isEmpty()) 
+            {
+                throw new Exception("Please select a departure location.");
+            }
+            if (toDestination.isEmpty()) 
+            {
+                throw new Exception("Please select a destination.");
+            }
+            if (fromDestination.equals(toDestination)) 
+            {
+                throw new Exception("Departure location and destination cannot be the same.");
+            }
+            if (flightClass.isEmpty()) 
+            {
+                throw new Exception("Please select a flight class.");
+            }
+            if (passengers <= 0) 
+            {
+                throw new Exception("Please enter a valid number of passengers.");
+            }
+
+            String username = LoggedInUser.username;
             String password = LoggedInUser.password;
-            
             if (username == null || password == null) 
             {
-            throw new Exception("User is not logged in. Please log in and try again.");
+                throw new Exception("User is not logged in. Please log in and try again.");
             }
-            
+
             CFlight_Booking fli_book = new CFlight_Booking();
             fli_book.bookFlight(flightNumber, fromDestination, toDestination, flightClass, passengers, username, password);
             JOptionPane.showMessageDialog(this, "Flight booking successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        }
+
+            clearForm();
+
+        } 
         catch (Exception e) 
         {
             JOptionPane.showMessageDialog(this, "An error occurred: " + e.getMessage(), "Add Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-        clearForm();
-        
     }//GEN-LAST:event_btnBookingActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
