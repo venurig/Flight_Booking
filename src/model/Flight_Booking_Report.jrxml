@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="940" pageHeight="842" columnWidth="900" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9b366a0e-c968-47a7-9f12-ae0b04ba4a97">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="97"/>
+	<property name="ireport.x" value="104"/>
 	<property name="ireport.y" value="0"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT
@@ -44,23 +44,26 @@ ON
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="76" splitType="Stretch">
+		<band height="72" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="900" height="72" forecolor="#99CCFF" backcolor="#99CCFF" uuid="31c055fc-65ea-43fd-8dd5-5e2e4c5408fe"/>
+			</rectangle>
 			<staticText>
-				<reportElement x="389" y="17" width="31" height="30" forecolor="#0065D7" uuid="6d372b68-cffe-4b4c-9868-3cd37cb7e919"/>
+				<reportElement x="371" y="17" width="31" height="30" forecolor="#0065D7" uuid="6d372b68-cffe-4b4c-9868-3cd37cb7e919"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Microsoft YaHei" size="20" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Sri]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="419" y="17" width="80" height="30" forecolor="#0000B0" uuid="6f9a7989-76c9-48c2-af2a-133f7b17de3c"/>
+				<reportElement x="401" y="17" width="80" height="30" forecolor="#0000B0" uuid="6f9a7989-76c9-48c2-af2a-133f7b17de3c"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Microsoft YaHei" size="20" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Lankan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="435" y="43" width="31" height="13" forecolor="#0065D7" uuid="bc3bc1b6-96c6-42b9-8602-9563d71c77ff"/>
+				<reportElement x="417" y="43" width="31" height="13" forecolor="#0065D7" uuid="bc3bc1b6-96c6-42b9-8602-9563d71c77ff"/>
 				<textElement>
 					<font fontName="Microsoft YaHei UI" size="8" isBold="true"/>
 				</textElement>
@@ -71,7 +74,7 @@ ON
 	<pageHeader>
 		<band height="66" splitType="Stretch">
 			<staticText>
-				<reportElement x="344" y="18" width="220" height="27" forecolor="#000099" uuid="2bac355b-931e-48d7-aff6-aa45654dc6a0"/>
+				<reportElement x="344" y="19" width="220" height="27" forecolor="#000099" uuid="2bac355b-931e-48d7-aff6-aa45654dc6a0"/>
 				<textElement>
 					<font fontName="Serif" size="16" isBold="true"/>
 				</textElement>
@@ -130,6 +133,18 @@ ON
 				</textElement>
 				<text><![CDATA[Passengers]]></text>
 			</staticText>
+			<line>
+				<reportElement x="0" y="7" width="900" height="1" uuid="6d59bb62-28df-404e-8e6e-f9a6848cc80d"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="38" width="900" height="1" uuid="41fe5e1a-dc08-4b1a-af01-2f8450e1ca47"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
 		</band>
 	</columnHeader>
 	<detail>
@@ -183,6 +198,12 @@ ON
 				</textElement>
 				<textFieldExpression><![CDATA[$F{passengers}]]></textFieldExpression>
 			</textField>
+			<line>
+				<reportElement x="0" y="47" width="900" height="1" forecolor="#999999" uuid="491213a5-e5c2-4929-8a39-c822bbddc0d9"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
 		</band>
 	</detail>
 	<columnFooter>
@@ -190,29 +211,32 @@ ON
 	</columnFooter>
 	<pageFooter>
 		<band height="84" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="900" height="84" forecolor="#99CCFF" backcolor="#99CCFF" uuid="4050b1f7-99c4-45ac-8b62-e3c10ccbb174"/>
+			</rectangle>
 			<staticText>
-				<reportElement x="389" y="10" width="149" height="20" forecolor="#000179" uuid="8d55a0b8-75f7-4029-a21d-c5e0a3d95cde"/>
+				<reportElement x="376" y="10" width="149" height="20" forecolor="#000179" uuid="8d55a0b8-75f7-4029-a21d-c5e0a3d95cde"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Microsoft YaHei UI" isBold="true"/>
 				</textElement>
 				<text><![CDATA[SriLankan Airlines Limited]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="280" y="30" width="365" height="14" forecolor="#000179" uuid="3f3baf22-474b-4743-9326-a460403ba5dd"/>
+				<reportElement x="267" y="30" width="365" height="14" forecolor="#000179" uuid="3f3baf22-474b-4743-9326-a460403ba5dd"/>
 				<textElement>
 					<font fontName="Microsoft YaHei UI"/>
 				</textElement>
 				<text><![CDATA[Airline Center  Bandaranaike International Airport, Katunayake, Sri Lanka.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="254" y="44" width="410" height="15" forecolor="#000179" uuid="7739177f-2d2b-4b8e-83d3-d63a68f174e9"/>
+				<reportElement x="241" y="44" width="410" height="15" forecolor="#000179" uuid="7739177f-2d2b-4b8e-83d3-d63a68f174e9"/>
 				<textElement>
 					<font fontName="Microsoft YaHei UI"/>
 				</textElement>
 				<text><![CDATA[Tel: +94 (0)11226 4444     Fax: +94 (0)11225 9435     Website: www.srilankan.com]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="405" y="59" width="106" height="14" forecolor="#000179" uuid="ef29b713-370f-4cc7-8b5c-abf50f40ad3c"/>
+				<reportElement x="392" y="59" width="106" height="14" forecolor="#000179" uuid="ef29b713-370f-4cc7-8b5c-abf50f40ad3c"/>
 				<textElement>
 					<font fontName="Microsoft YaHei UI"/>
 				</textElement>
@@ -221,6 +245,6 @@ ON
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="4" splitType="Stretch"/>
+		<band height="3" splitType="Stretch"/>
 	</summary>
 </jasperReport>
