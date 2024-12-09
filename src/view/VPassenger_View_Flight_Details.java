@@ -241,6 +241,8 @@ public class VPassenger_View_Flight_Details extends javax.swing.JFrame
                 return types [columnIndex];
             }
         });
+        tblFlights.setGridColor(new java.awt.Color(153, 153, 153));
+        tblFlights.setShowGrid(true);
         jScrollPane2.setViewportView(tblFlights);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
