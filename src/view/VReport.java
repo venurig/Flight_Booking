@@ -250,7 +250,7 @@ public class VReport extends javax.swing.JFrame
     }//GEN-LAST:event_btnFlightDetailsActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-       VReport sdashboard = new VReport();
+       VStaff_Dashboard sdashboard = new VStaff_Dashboard();
        sdashboard.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_btnHomeActionPerformed

@@ -331,11 +331,26 @@ public class VFlight_Tickets extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbFlightNumberActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        try 
+       try 
         {
             String flightNumber = cmbFlightNumber.getSelectedItem() != null ? cmbFlightNumber.getSelectedItem().toString() : "";
             String flightClass = cmbClass.getSelectedItem() != null ? cmbClass.getSelectedItem().toString() : "";
-            double ticketPrice = (double) spTicketPrice.getValue();
+
+            Object value = spTicketPrice.getValue();
+            double ticketPrice;
+
+            if (value instanceof Integer) 
+            {
+                ticketPrice = ((Integer) value).doubleValue();
+            } 
+            else if (value instanceof Double) 
+            {
+                ticketPrice = (Double) value;
+            } 
+            else 
+            {
+                throw new IllegalArgumentException("Invalid ticket price value.");
+            }
 
             if (flightNumber.isEmpty()) 
             {
@@ -359,47 +374,53 @@ public class VFlight_Tickets extends javax.swing.JFrame {
             ticket_add.addFlightTicket(flightNumber, flightClass, ticketPrice);
             JOptionPane.showMessageDialog(this, "Flight ticket price added successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         }
-        
         catch (Exception e) 
         {
             JOptionPane.showMessageDialog(this, "An error occurred: " + e.getMessage(), "Add Error", JOptionPane.ERROR_MESSAGE);
         }
-        
+
         clearForm();
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         try 
         {
-            String flightNumber;
-            String flightClass;
-            double ticketPrice;
+            String flightNumber = cmbFlightNumber.getSelectedItem() != null ? cmbFlightNumber.getSelectedItem().toString() : "";
+            String flightClass = cmbClass.getSelectedItem() != null ? cmbClass.getSelectedItem().toString() : "";
 
-            flightNumber = cmbFlightNumber.getSelectedItem().toString();
-            flightClass = cmbClass.getSelectedItem().toString();
-            ticketPrice = (double) spTicketPrice.getValue();
-            
-            if (cmbFlightNumber.getSelectedItem() == null || cmbFlightNumber.getSelectedItem().toString().isEmpty()) 
+            if (flightNumber.isEmpty()) 
             {
                 JOptionPane.showMessageDialog(this, "Please select a valid flight number.", "Validation Error", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
-            if (cmbClass.getSelectedItem() == null || cmbClass.getSelectedItem().toString().isEmpty())
+            if (flightClass.isEmpty()) 
             {
                 JOptionPane.showMessageDialog(this, "Please select a valid flight class.", "Validation Error", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
+            double ticketPrice = 0.0;
             Object ticketPriceValue = spTicketPrice.getValue();
-            if (ticketPriceValue == null || !(ticketPriceValue instanceof Double) || (Double) ticketPriceValue <= 0) 
+            if (ticketPriceValue instanceof Number) 
             {
-                JOptionPane.showMessageDialog(this, "Please enter a valid ticket price greater than 0.", "Validation Error", JOptionPane.WARNING_MESSAGE);
+                ticketPrice = ((Number) ticketPriceValue).doubleValue();
+            } 
+            else 
+            {
+                JOptionPane.showMessageDialog(this, "Please enter a valid ticket price.", "Validation Error", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-        
+
+            if (ticketPrice <= 0) 
+            {
+                JOptionPane.showMessageDialog(this, "Ticket price must be greater than 0.", "Validation Error", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
             CFlight_Tickets ticket_update = new CFlight_Tickets();
             ticket_update.updateFlightTicket(flightNumber, flightClass, ticketPrice);
+
             JOptionPane.showMessageDialog(this, "Flight ticket price updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         } 
         catch (Exception e) 
@@ -407,7 +428,7 @@ public class VFlight_Tickets extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "An error occurred: " + e.getMessage(), "Update Error", JOptionPane.ERROR_MESSAGE);
         }
 
-        clearForm();
+        clearForm(); 
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
