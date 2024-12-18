@@ -25,6 +25,7 @@ public class VFlight_Tickets extends javax.swing.JFrame {
         initComponents();
         loadFlightNumbers();
         
+        cmbSearchFlightNumber.setSelectedIndex(-1); 
         cmbFlightNumber.setSelectedIndex(-1); 
         cmbClass.setSelectedIndex(-1);
         
@@ -55,9 +56,9 @@ public class VFlight_Tickets extends javax.swing.JFrame {
         btnUpdate = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
-        txtSearchFlightNumber = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         spTicketPrice = new javax.swing.JSpinner();
+        cmbSearchFlightNumber = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Flight Tickets");
@@ -204,13 +205,13 @@ public class VFlight_Tickets extends javax.swing.JFrame {
             }
         });
 
-        txtSearchFlightNumber.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 153));
         jLabel7.setText("FLIGHT TICKETS");
 
         spTicketPrice.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        cmbSearchFlightNumber.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -231,8 +232,8 @@ public class VFlight_Tickets extends javax.swing.JFrame {
                         .addComponent(btnDelete))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnSearch)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtSearchFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbSearchFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -250,7 +251,7 @@ public class VFlight_Tickets extends javax.swing.JFrame {
                 .addGap(52, 52, 52)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSearch)
-                    .addComponent(txtSearchFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbSearchFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -268,7 +269,7 @@ public class VFlight_Tickets extends javax.swing.JFrame {
                     .addComponent(btnDelete)
                     .addComponent(btnUpdate)
                     .addComponent(btnAdd))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -288,17 +289,18 @@ public class VFlight_Tickets extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void loadFlightNumbers() 
+private void loadFlightNumbers() 
     {
         try 
         {
             CFlight_Details flightController = new CFlight_Details();
             List<String> flightNumbers = flightController.getAllFlightNumbers();
 
+            cmbSearchFlightNumber.removeAllItems();
             cmbFlightNumber.removeAllItems();
             for (String flightNumber : flightNumbers) 
             {
+                cmbSearchFlightNumber.addItem(flightNumber);
                 cmbFlightNumber.addItem(flightNumber);
             }
         } 
@@ -308,8 +310,6 @@ public class VFlight_Tickets extends javax.swing.JFrame {
         }
     }
 
-    
-    
     private JSpinner createPriceSpinner() 
     {
         double initialPrice = 0.0; 
@@ -434,7 +434,7 @@ public class VFlight_Tickets extends javax.swing.JFrame {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         try 
         {
-            String flightNumber = txtSearchFlightNumber.getText().trim();
+            String flightNumber = cmbSearchFlightNumber.getSelectedItem().toString().trim();
 
             if (flightNumber.isEmpty()) 
             {
@@ -537,6 +537,7 @@ public class VFlight_Tickets extends javax.swing.JFrame {
     private javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<String> cmbClass;
     private javax.swing.JComboBox<String> cmbFlightNumber;
+    private javax.swing.JComboBox<String> cmbSearchFlightNumber;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -546,7 +547,6 @@ public class VFlight_Tickets extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSpinner spTicketPrice;
-    private javax.swing.JTextField txtSearchFlightNumber;
     // End of variables declaration//GEN-END:variables
 
     private void clearForm() 

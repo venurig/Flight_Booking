@@ -14,11 +14,11 @@ public class CFlight_Details
        mfdadd.addFlightDetails(flightNumber, fromDestination, toDestination, departureDate, departureTime, arrivalDate, arrivalTime);
    }
     
-    private MFlight_Details mFlightDetails = new MFlight_Details();
+    private MFlight_Details mFlightTickets = new MFlight_Details();
 
     public List<String> getAllFlightNumbers() 
     {
-        return mFlightDetails.getAllFlightNumbers();
+        return mFlightTickets.getAllFlightNumbers();
     }
     
     public void updateFlightDetails(String flightNumber, String fromDestination, String toDestination, String departureDate,String departureTime, String arrivalDate, String arrivalTime)
@@ -39,4 +39,5 @@ public class CFlight_Details
         {
             return mfd.searchFlightDetails(flightNumber);
         }
+
 }

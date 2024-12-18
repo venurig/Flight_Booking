@@ -11,6 +11,7 @@ import java.awt.Image;
 import java.util.Calendar;
 import javax.swing.ImageIcon;
 import java.util.Date;
+import java.util.List;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerDateModel;
 import model.Flight;
@@ -20,7 +21,9 @@ public class VFlight_Details extends javax.swing.JFrame {
 
     public VFlight_Details() {
         initComponents();
+        loadFlightNumbers();
         
+        cmbSearchFlightNumber.setSelectedIndex(-1);
         cmbFrom.setSelectedIndex(-1); 
         cmbTo.setSelectedIndex(-1);
         
@@ -55,7 +58,6 @@ public class VFlight_Details extends javax.swing.JFrame {
         btnUpdate = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
-        txtSearchFlightNumber = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         Date date = new Date();
         SpinnerDateModel sm =
@@ -64,6 +66,7 @@ public class VFlight_Details extends javax.swing.JFrame {
         SpinnerDateModel sm1 =
         new SpinnerDateModel(date, null, null, Calendar.HOUR_OF_DAY);
         sArrivalTime = new javax.swing.JSpinner(sm1);
+        cmbSearchFlightNumber = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Flight Details");
@@ -221,8 +224,6 @@ public class VFlight_Details extends javax.swing.JFrame {
             }
         });
 
-        txtSearchFlightNumber.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 153));
         jLabel7.setText("FLIGHT DETAILS");
@@ -232,6 +233,8 @@ public class VFlight_Details extends javax.swing.JFrame {
 
         JSpinner.DateEditor de1 = new JSpinner.DateEditor(sArrivalTime, "HH:mm:ss");
         sArrivalTime.setEditor(de1);
+
+        cmbSearchFlightNumber.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -254,7 +257,7 @@ public class VFlight_Details extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addComponent(btnSearch)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtSearchFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cmbSearchFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(cmbTo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(cmbFrom, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -283,7 +286,7 @@ public class VFlight_Details extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSearch)
-                    .addComponent(txtSearchFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbSearchFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -334,6 +337,25 @@ public class VFlight_Details extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void loadFlightNumbers() 
+    {
+        try 
+        {
+            CFlight_Details flightController = new CFlight_Details();
+            List<String> flightNumbers = flightController.getAllFlightNumbers();
+
+            cmbSearchFlightNumber.removeAllItems();
+            for (String flightNumber : flightNumbers) 
+            {
+                cmbSearchFlightNumber.addItem(flightNumber);
+            }
+        } 
+        catch (Exception e) 
+        {
+            JOptionPane.showMessageDialog(this, "Error loading flight numbers: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     private void cmbFromActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbFromActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbFromActionPerformed
@@ -481,7 +503,7 @@ public class VFlight_Details extends javax.swing.JFrame {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         try 
         {
-            String flightNumber = txtSearchFlightNumber.getText().trim();
+            String flightNumber = cmbSearchFlightNumber.getSelectedItem().toString().trim();
 
             if (flightNumber.isEmpty()) 
             {
@@ -587,6 +609,7 @@ public class VFlight_Details extends javax.swing.JFrame {
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<String> cmbFrom;
+    private javax.swing.JComboBox<String> cmbSearchFlightNumber;
     private javax.swing.JComboBox<String> cmbTo;
     private com.toedter.calendar.JDateChooser datecArrivalDate;
     private com.toedter.calendar.JDateChooser datecDepartureDate;
@@ -602,7 +625,6 @@ public class VFlight_Details extends javax.swing.JFrame {
     private javax.swing.JSpinner sArrivalTime;
     private javax.swing.JSpinner sDepartureTime;
     private javax.swing.JTextField txtFlightNumber;
-    private javax.swing.JTextField txtSearchFlightNumber;
     // End of variables declaration//GEN-END:variables
 
     private void clearForm() 
