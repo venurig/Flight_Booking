@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="940" pageHeight="842" columnWidth="900" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9b366a0e-c968-47a7-9f12-ae0b04ba4a97">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="104"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT
@@ -49,21 +49,21 @@ ON
 				<reportElement x="0" y="0" width="900" height="72" forecolor="#99CCFF" backcolor="#99CCFF" uuid="31c055fc-65ea-43fd-8dd5-5e2e4c5408fe"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="371" y="17" width="31" height="30" forecolor="#0065D7" uuid="6d372b68-cffe-4b4c-9868-3cd37cb7e919"/>
+				<reportElement x="393" y="17" width="31" height="30" forecolor="#0065D7" uuid="6d372b68-cffe-4b4c-9868-3cd37cb7e919"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Microsoft YaHei" size="20" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Sri]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="401" y="17" width="80" height="30" forecolor="#0000B0" uuid="6f9a7989-76c9-48c2-af2a-133f7b17de3c"/>
+				<reportElement x="423" y="17" width="80" height="30" forecolor="#0000B0" uuid="6f9a7989-76c9-48c2-af2a-133f7b17de3c"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Microsoft YaHei" size="20" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Lankan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="417" y="43" width="31" height="13" forecolor="#0065D7" uuid="bc3bc1b6-96c6-42b9-8602-9563d71c77ff"/>
+				<reportElement x="439" y="43" width="31" height="13" forecolor="#0065D7" uuid="bc3bc1b6-96c6-42b9-8602-9563d71c77ff"/>
 				<textElement>
 					<font fontName="Microsoft YaHei UI" size="8" isBold="true"/>
 				</textElement>
@@ -148,7 +148,7 @@ ON
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="59" splitType="Stretch">
+		<band height="54" splitType="Stretch">
 			<textField>
 				<reportElement x="7" y="14" width="98" height="20" uuid="78c44047-b5eb-46ae-90b7-a28e4931ca87"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -207,7 +207,7 @@ ON
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="10" splitType="Stretch"/>
+		<band height="3" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
 		<band height="84" splitType="Stretch">

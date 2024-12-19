@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="940" pageHeight="842" columnWidth="900" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="30538e70-c440-4a21-a324-4370c0163913">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fb.flightNumber" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+    fb.flightNumber, 
+    fb.bookingID, 
+    fb.passengerID, 
+    rd.fullName,
+    rd.passportNumber,    
+    fb.flightClass, 
+    fb.passengers
+FROM 
+    flightBooking fb
+INNER JOIN 
+    registerDetails rd 
+ON 
+    fb.passengerID = rd.passengerID WHERE fb.flightNumber = $P{fb.flightNumber};]]>
+	</queryString>
+	<field name="flightNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bookingID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="passengerID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fullName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="passportNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="flightClass" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="passengers" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="0" width="900" height="72" forecolor="#99CCFF" backcolor="#99CCFF" uuid="72a31eea-5d0f-4083-b2a6-41be42c7da3e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="424" y="15" width="80" height="30" forecolor="#0000B0" uuid="d8f9fd5f-8f1c-4b42-bd10-4163aa877658"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Microsoft YaHei" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lankan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="41" width="31" height="13" forecolor="#0065D7" uuid="6d43c0dc-ff3a-4575-8c6b-0177f2d4e865"/>
+				<textElement>
+					<font fontName="Microsoft YaHei UI" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Airlines]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="15" width="31" height="30" forecolor="#0065D7" uuid="e880dbf6-bbf7-4459-8ea3-7f162a695916"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Microsoft YaHei" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sri]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="330" y="13" width="220" height="27" forecolor="#000099" uuid="4819b0a5-66b7-48ff-af36-0d6833cf59c3"/>
+				<textElement>
+					<font fontName="Serif" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FLIGHT BOOKING REPORT]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="252" y="13" width="93" height="20" uuid="c7fe2579-39ba-4793-bf4c-ec7c9de1720e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Passenger ID]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="38" width="900" height="1" uuid="759df01f-12ac-432e-b8a8-66f136c9890c"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="539" y="13" width="111" height="20" uuid="fd5036ac-3d7d-4e09-8878-aa72c90fe698"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Passport Number]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="7" width="900" height="1" uuid="ba7de0a2-845e-48f7-8118-b9b4d5decd7d"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="814" y="13" width="81" height="20" uuid="6839cfa5-02e6-4fd7-95db-cb28436d24c0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Passengers]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="377" y="13" width="130" height="20" uuid="5727d773-680c-4bcb-b5f5-caacf6b9aae4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Full Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="13" width="81" height="20" uuid="056ebd07-c6e0-4db7-901b-ddd5a723b62e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Booking ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="13" width="98" height="20" uuid="b8cd33bc-85fe-4227-bf02-8578089b3e5b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Flight Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="684" y="13" width="100" height="20" uuid="9bf08f0c-56b3-4294-8c13-73ef414c2878"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Flight Class]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="135" y="13" width="81" height="20" uuid="8e52104e-ca7a-4d36-a650-cbf4755aec9d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bookingID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="251" y="13" width="93" height="20" uuid="d47fda4d-10b3-4c35-bd9c-4f9f0335de76"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{passengerID}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="46" width="900" height="1" forecolor="#999999" uuid="fcf0896c-223a-442b-8f0b-cf4f52d53d3f"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="7" y="13" width="98" height="20" uuid="5cf7de58-379e-439e-9005-138e3418afdb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{flightNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="13" width="130" height="20" uuid="deae1e5b-2f8d-4d16-945f-10e94c0b3de4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fullName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="538" y="13" width="111" height="20" uuid="d975add8-2a87-493c-929e-781f8912b70a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{passportNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="813" y="13" width="81" height="20" uuid="26e94de9-2a44-4a97-9d3f-796e1fce0923"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{passengers}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="683" y="13" width="100" height="20" uuid="196279bb-f291-4227-878b-9e09f08f9cc9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{flightClass}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="3" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="86" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="2" width="900" height="84" forecolor="#99CCFF" backcolor="#99CCFF" uuid="521e6343-75bd-476d-917a-767c7ce08427"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="267" y="32" width="365" height="14" forecolor="#000179" uuid="9fff707a-ef01-49bb-a03d-699647c8b0fe"/>
+				<textElement>
+					<font fontName="Microsoft YaHei UI"/>
+				</textElement>
+				<text><![CDATA[Airline Center  Bandaranaike International Airport, Katunayake, Sri Lanka.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="12" width="149" height="20" forecolor="#000179" uuid="8888ab80-b527-47b9-82d1-75cded564efd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Microsoft YaHei UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SriLankan Airlines Limited]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="61" width="106" height="14" forecolor="#000179" uuid="24dfb62c-d32a-4dc4-be6e-6e23fb9b1ab0"/>
+				<textElement>
+					<font fontName="Microsoft YaHei UI"/>
+				</textElement>
+				<text><![CDATA[Company Rag.PB 67]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="241" y="46" width="410" height="15" forecolor="#000179" uuid="e027e95a-168f-42ac-8f82-a29c7f3dceb7"/>
+				<textElement>
+					<font fontName="Microsoft YaHei UI"/>
+				</textElement>
+				<text><![CDATA[Tel: +94 (0)11226 4444     Fax: +94 (0)11225 9435     Website: www.srilankan.com]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="4" splitType="Stretch"/>
+	</summary>
+</jasperReport>
