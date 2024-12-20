@@ -29,8 +29,8 @@ public class CFlight_Tickets
     
     private MFlight_Tickets mft = new MFlight_Tickets();
 
-        public Ticket getFlightTicket(String flightNumber) 
+        public Ticket getFlightTicket(String flightNumber,String flightClass) 
         {
-            return mft.searchFlightTicket(flightNumber);
+            return mft.searchFlightTicket(flightNumber, flightClass);
         }
 }

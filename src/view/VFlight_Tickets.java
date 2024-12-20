@@ -25,7 +25,8 @@ public class VFlight_Tickets extends javax.swing.JFrame {
         initComponents();
         loadFlightNumbers();
         
-        cmbSearchFlightNumber.setSelectedIndex(-1); 
+        cmbSearchFlightNumber.setSelectedIndex(-1);
+        cmbSearchFlightClass.setSelectedIndex(-1);
         cmbFlightNumber.setSelectedIndex(-1); 
         cmbClass.setSelectedIndex(-1);
         
@@ -59,6 +60,7 @@ public class VFlight_Tickets extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         spTicketPrice = new javax.swing.JSpinner();
         cmbSearchFlightNumber = new javax.swing.JComboBox<>();
+        cmbSearchFlightClass = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Flight Tickets");
@@ -213,6 +215,9 @@ public class VFlight_Tickets extends javax.swing.JFrame {
 
         cmbSearchFlightNumber.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        cmbSearchFlightClass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbSearchFlightClass.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Economy Class", "Business Class" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -220,20 +225,22 @@ public class VFlight_Tickets extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(119, 119, 119)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 165, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnSearch)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbSearchFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbSearchFlightClass, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnAdd)
                         .addGap(18, 18, 18)
                         .addComponent(btnUpdate)
                         .addGap(18, 18, 18)
                         .addComponent(btnDelete))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnSearch)
-                        .addGap(18, 18, 18)
-                        .addComponent(cmbSearchFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -248,11 +255,12 @@ public class VFlight_Tickets extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(jLabel7)
-                .addGap(52, 52, 52)
+                .addGap(51, 51, 51)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSearch)
-                    .addComponent(cmbSearchFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
+                    .addComponent(cmbSearchFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbSearchFlightClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cmbFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -432,18 +440,25 @@ private void loadFlightNumbers()
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        try 
+        try
         {
             String flightNumber = cmbSearchFlightNumber.getSelectedItem().toString().trim();
-
+            String flightClass = cmbSearchFlightClass.getSelectedItem().toString().trim();
+                        
             if (flightNumber.isEmpty()) 
             {
                 JOptionPane.showMessageDialog(this, "Please enter a flight number to search.", "Validation Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+            
+            if (flightClass.isEmpty()) 
+            {
+                JOptionPane.showMessageDialog(this, "Please enter a flight class to search.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
             CFlight_Tickets ticket_search = new CFlight_Tickets();
-            Ticket ticket = ticket_search.getFlightTicket(flightNumber);
+            Ticket ticket = ticket_search.getFlightTicket(flightNumber,flightClass);
 
             if (ticket != null) 
             {
@@ -537,6 +552,7 @@ private void loadFlightNumbers()
     private javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<String> cmbClass;
     private javax.swing.JComboBox<String> cmbFlightNumber;
+    private javax.swing.JComboBox<String> cmbSearchFlightClass;
     private javax.swing.JComboBox<String> cmbSearchFlightNumber;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

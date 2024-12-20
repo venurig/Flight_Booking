@@ -51,11 +51,12 @@ public class MFlight_Tickets
         }
     }
     
-    public Ticket searchFlightTicket(String flightNumber) {
+    public Ticket searchFlightTicket(String flightNumber, String flightClass)
+    {
         Ticket ticket = null;
         try {
             Statement st = DBConnection.createDBConnection().createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM FlightTicket WHERE flightNumber = '" + flightNumber + "'");
+            ResultSet rs = st.executeQuery("SELECT * FROM FlightTicket WHERE flightNumber = '" + flightNumber + "' AND flightClass = '" + flightClass + "'");
             
             if (rs.next()) {
                 ticket = new Ticket(
