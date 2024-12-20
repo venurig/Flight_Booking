@@ -28,7 +28,7 @@ public class MFlight_Tickets
         try 
         {
             Statement st = DBConnection.createDBConnection().createStatement();
-            st.executeUpdate("UPDATE FlightTicket SET flightClass = '"+flightClass+"' , ticketPrice = '"+ticketPrice+"' WHERE flightNumber = '"+flightNumber+"' ");
+            st.executeUpdate("UPDATE FlightTicket SET ticketPrice = '"+ticketPrice+"' WHERE flightNumber = '"+flightNumber+"' AND flightClass = '"+flightClass+"' ");
             System.out.println("Flight ticket successfully updated.");
         } 
         catch (SQLException e) {
