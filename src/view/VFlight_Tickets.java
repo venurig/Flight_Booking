@@ -25,8 +25,10 @@ public class VFlight_Tickets extends javax.swing.JFrame {
         initComponents();
         loadFlightNumbers();
         
-        cmbSearchFlightNumber.setSelectedIndex(-1);
-        cmbSearchFlightClass.setSelectedIndex(-1);
+        cmbSearchFlightNumber.addItem("Search Flight Number");
+        cmbSearchFlightClass.addItem("Search Flight Class");
+        cmbSearchFlightNumber.setSelectedItem("Search Flight Number");
+        cmbSearchFlightClass.setSelectedItem("Search Flight Class");
         cmbFlightNumber.setSelectedIndex(-1); 
         cmbClass.setSelectedIndex(-1);
         
@@ -228,18 +230,18 @@ public class VFlight_Tickets extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(btnSearch)
-                                .addGap(18, 18, 18)
-                                .addComponent(cmbSearchFlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(cmbSearchFlightClass, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnAdd)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnUpdate)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnDelete))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(btnSearch)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(cmbSearchFlightNumber, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(cmbSearchFlightClass, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
