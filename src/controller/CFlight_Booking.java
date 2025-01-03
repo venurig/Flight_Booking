@@ -13,4 +13,10 @@ public class CFlight_Booking
        MFlight_Booking mfbook = new MFlight_Booking();
        mfbook.bookFlight(flightNumber, fromDestination, toDestination, flightClass, passengers, username, password);
    }
+    
+    public boolean checkSeatAvailability(String flightNumber, String flightClass, int passengers) throws Exception {
+        MFlight_Booking mfbook = new MFlight_Booking();
+        return mfbook.checkSeatAvailability(flightNumber, flightClass, passengers);
+    }
+
 }
